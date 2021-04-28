@@ -14,7 +14,7 @@ To use hasktorch, you need to include the libtorch precompiled libraries and ref
 
 If you encounter linker errors you may need to specify a path to libtorch in the environment variable `LD_LIBRARY_PATH`. In this case you may want to download libtorch to `~/.libtorch` and then run `cp -rs $HOME/.libtorch libtorch` inside your project. This will allow you to write
 ```
-export LD_LIBRARY_PATH=$HOME/.libtorch:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$HOME/.libtorch/lib:$LD_LIBRARY_PATH
 ```
 in one of your shell configuration files, instead of the relative path `$PWD/libtorch` mentioned below.
 

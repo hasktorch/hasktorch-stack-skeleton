@@ -1,6 +1,6 @@
 .stack-work/
-libtorch/*
-!libtorch
+libtorch/**
+!libtorch/
 dist
 dist-*
 cabal-dev
