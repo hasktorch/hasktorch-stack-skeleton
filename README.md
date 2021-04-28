@@ -10,6 +10,16 @@
 
 ## Creating a hasktorch project
 
+To use hasktorch, you need to include the libtorch precompiled libraries and reference a hasktorch commit in `stack.yaml` extra deps. 
+
+If you encounter linker errors you may need to specify a path to libtorch in the environment variable `LD_LIBRARY_PATH`. In this case you may want to download libtorch to `~/.libtorch` and then run `cp -rs $HOME/.libtorch libtorch` inside your project. This will allow you to write
+```
+export LD_LIBRARY_PATH=$HOME/.libtorch:$LD_LIBRARY_PATH
+```
+in one of your shell configuration files, instead of the relative path `$PWD/libtorch` mentioned below.
+
+
+
 ### 1) libtorch 
 
 Download the libtorch dependency in `./libtorch` by downloading
@@ -28,7 +38,7 @@ $ export LD_LIBRARY_PATH=$(pwd)/libtorch/lib:$LD_LIBRARY_PATH
 ```
 before running stack commands. 
 
-_Q: Can we put libtorch in a single location instead and replace by `/path/to/libtorch/lib` in bashrc instead?_
+_Q: Can we put libtorch in a single location instead and replace by `/path/to/libtorch/lib` in bashrc instead? => yes, use symlink to libtorch inside the project and absolute path for the environment_
 
 ### 2) hasktorch
 
@@ -79,7 +89,7 @@ ghci> :t asTensor [1, 2, 3]
 
 ## Troubleshooting
 
-In case you can load the library but get runtime errors like 
+In case you can load the library but get linker errors like 
 
 ```
 λ> Torch.exp t
@@ -88,7 +98,7 @@ Intel MKL FATAL ERROR: cannot load libmkl_vml_avx2.so or libmkl_vml_def.so.
 ```
 You may have missing libtorch links and should try fixing `$LD_LIBRARY_PRELOAD` as mentioned above. 
 
-See also the contents of the hasktorch [setenv script][setenv].
+See also the contents of the hasktorch [setenv script here][setenv].
 
 Otherwise contact the team on their slack channel.
 
