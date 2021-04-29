@@ -1,0 +1,20 @@
+resolver: lts-17.4
+
+packages:
+- . 
+
+extra-deps:
+  - git: https://github.com/hasktorch/hasktorch.git
+    commit: 4e846fdcd89df5c7c6991cb9d6142007a6bb0a58
+    subdirs:
+      - hasktorch
+      - libtorch-ffi
+      - libtorch-ffi-helper
+
+extra-include-dirs:
+  - libtorch/include/torch/csrc/api/include
+  - libtorch/include
+
+extra-lib-dirs:
+  - ./libtorch/lib
+
