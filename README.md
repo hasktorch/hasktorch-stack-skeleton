@@ -4,7 +4,7 @@
 [2]:https://github.com/hasktorch/libtorch-binary-for-ci/releases/download/1.8.0/cpu-libtorch-cxx11-abi-shared-with-deps-latest.zip
 
 
-[tutorial]:https://htmlpreview.github.io/?https://raw.githubusercontent.com/mcwitt/hasktorch/tutorial-tintin/website/tutorial/01-getting-started.html
+[tutorial]:https://hasktorch.github.io/tutorial/01-getting-started.html
 
 [setenv]:https://github.com/hasktorch/hasktorch/blob/master/setenv
 
