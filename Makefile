@@ -1,5 +1,5 @@
 # This is the same as VERSION in https://github.com/hasktorch/hasktorch/blob/master/deps/get-deps.sh
-VERSION := 1.9.0
+VERSION := 1.11.0
 LD_LIBRARY_PATH := $(PATH)/libtorch/lib:$(LD_LIBRARY_PATH)
 UNAME := $(shell uname)
 
