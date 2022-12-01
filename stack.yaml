@@ -1,15 +1,20 @@
-resolver: lts-17.4
+resolver: lts-20.2
 
 packages:
 - . 
 
 extra-deps:
   - git: https://github.com/hasktorch/hasktorch.git
-    commit: 04ac5327add144b72361c368c59997e5ce0bc6b7
+    commit: a31ef707927cd70ea9283e3b10f2270ef3e2935a
     subdirs:
       - hasktorch
       - libtorch-ffi
       - libtorch-ffi-helper
+  - git: https://github.com/fpco/inline-c
+    commit: 2d0fe9b2f0aa0e1aefc7bfed95a501e59486afb0
+    subdirs:
+      - inline-c
+      - inline-c-cpp
 
 extra-include-dirs:
   - libtorch/include/torch/csrc/api/include
